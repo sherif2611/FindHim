@@ -1,0 +1,50 @@
+﻿@using Project1.ViewModels;
+@model UserModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/normalize.css">
+    <link rel="stylesheet" href="~/css/loignmaster.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="background">
+        <div class="container">
+            <form method="post" asp-action="SavedLogin" asp-controller="Account">
+                <div class="form">
+                    <h1>LogIn</h1>
+                    <div class="username">
+                        <div>
+                            <i class="far fa-user fa-fw"></i>
+                            <input type="text" id="username" asp-for="Email" placeholder="Email">
+                        </div>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="Password">
+
+                        <div>
+                            <i class="fas fa-server fa-fw"></i>
+                            <input type="password" id="password" asp-for="Password" placeholder="Password">
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="submit">
+                        <input type="submit">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

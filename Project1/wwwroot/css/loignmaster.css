@@ -1,0 +1,142 @@
+﻿
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: #ececec;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.background {
+    background: #808080;
+    width: 100%;
+    height: 95vh;
+    position: relative;
+}
+
+    .background .form {
+        padding: 30px 20px;
+        width: 50%;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 15px;
+        gap: 50px;
+    }
+
+        .background .form div[class] {
+            width: 80%;
+            text-align: center;
+        }
+
+.form input:not([type="submit"], [type="radio"]) {
+    display: inline-block;
+    padding: 10px;
+    width: calc(100% - 70px);
+    border: none;
+    border-bottom: 2px solid #ececec;
+    transition-duration: .3s;
+    transform-origin: center;
+}
+
+.form input:not([type="submit"]):focus {
+    outline: none;
+    border-bottom-color: var(--main-color);
+}
+
+.form input[type="submit"] {
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    background-color: #1787e0;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: 300;
+    transition-duration: .2s;
+}
+
+    .form input[type="submit"]:hover {
+        filter: brightness(95%) drop-shadow(2px 2px 4px rgb(63, 54, 54));
+    }
+
+@media (width <= 768px) {
+    .background .form {
+        padding: 30px 5px;
+        width: 90%;
+    }
+
+        .background .form div {
+            width: 100%;
+        }
+
+    .form input[type="submit"] {
+        width: 50%;
+    }
+}
+
+.form .Check {
+    display: flex;
+    justify-content: space-evenly;
+}

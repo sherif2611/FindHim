@@ -1,0 +1,74 @@
+﻿@using Project1.ViewModels;
+@model UserModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup || Ma3rafa</title>
+    <link rel="stylesheet" href="~/css/normalize.css">
+    <link rel="stylesheet" href="~/css/signup.css">
+    <link rel="stylesheet" href="~/css/loignmaster.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="background">
+        <div class="container">
+            <form method="post" asp-action="SavedRegiester" asp-controller="Account">
+                <div class="form">
+                    <h1>SignUp</h1>
+                    <div class="name">
+                        <div>
+                            <input type="text" asp-for="Name" placeholder="Full Name">
+                        </div>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="mail">
+                        <div>
+                            <input type="text" id="mail" asp-for="Email" placeholder="Gamil">
+                        </div>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="phone">
+                        <div>
+                            <input type="phone" asp-for="Phone" placeholder="Phone Number">
+                        </div>
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                    <div class="Password">
+                        <div>
+                            <input type="password" id="password" asp-for="Password" placeholder="Password">
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="Password-conf">
+                        <div>
+                            <input type="password" id="password" asp-for="CoPassword" placeholder="Confirm Your Password">
+                        </div>
+                        <span asp-validation-for="CoPassword" class="text-danger"></span>
+                    </div>
+                    <div class="submit">
+                        <input type="submit">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+@section Scripts{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

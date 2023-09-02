@@ -1,0 +1,46 @@
+﻿@using Project1.ViewModels;
+
+@model Information
+
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/Sherif%20Ibrahim/Downloads/Telegram%20Desktop/index.html -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="~/css/Person.css">
+    <style>
+        h2{
+            font-weight:400;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="found">
+            <hr>
+            <div class="img">
+                <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Image)" alt="Missing Person Image" />
+            </div>
+            <hr>
+            <div class="textt d-flex">
+                <div>
+                    <h2>Missing Person Information</h2>
+                    <h5>Name : @Model.Name</h5>
+                    <h5>Age : @Model.Age</h5>
+                    <h5>Gender : @Model.Gender</h5>
+                    <h5>Date wich person was missed : @Model.Date</h5>
+                    <h5>Governorate where person was missed : @Model.FoundGovern</h5>
+                    <h5>City where person was missed : @Model.FoundCity</h5>
+                </div>
+                <div>
+                    <h2>Publisher Information</h2>
+                    <h5>Name : @Model.UserName</h5>
+                    <h5>Governorate : @Model.Address_Govern</h5>
+                    <h5>City : @Model.Address_City</h5>
+                    <h5>Phone Number : @Model.Phone</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

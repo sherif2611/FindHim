@@ -1,0 +1,63 @@
+﻿<style>
+    .w-100{
+        margin-top:5%;
+    }
+
+    .btn-primary{
+        margin-left:40%;
+    }
+</style>
+
+<div class="w-100">
+    <a asp-action="AddPerson" asp-controller="MissingPeople" class="btn btn-primary mb-5" id="x">New Misssing Person</a>
+    @if (ViewData["_People"]==null)
+    {
+        <h1 class="text-center">There Are No People !</h1>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Governorate person was found</th>
+                    <th scope="col">City person was found</th>
+                    <th scope="col">Found Date</th>
+                    <th scope="col">View More</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var peopleList = ViewData["_people"] as List<MissingPerson>;
+                    if (peopleList != null)
+                    {
+                        for (int i = 0; i < peopleList.Count; i++)
+                        {
+                            var person = peopleList[i];
+                            <tr>
+                                <td>@(i+1)</td>
+                                <td>@person.Name</td>
+                                <td>@person.Gender</td>
+                                <td>@person.Age</td>
+                                <td>@person.FoundGovern</td>
+                                <td>@person.FoundCity</td>
+                                <td>@person.Date</td>
+                                <td>
+                                    <a asp-action="Person" asp-asp-controller="MissingPeople" asp-route-id="@person.Id">Enter</a>
+                                </td>
+                                <td>
+                                    <a asp-action="Delete" asp-asp-controller="MissingPeople" asp-route-id="@person.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                }
+
+            </tbody>
+        </table>
+    }
+
+</div>

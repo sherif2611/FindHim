@@ -1,0 +1,218 @@
+﻿@using Project1.ViewModels;
+@model _MissingPerson
+<html>
+	<head>
+	<style>
+		form {
+			margin-left: 1%;
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+		}
+
+		.bttn {
+			display: inline-block;
+			font-weight: 400;
+			line-height: 1.5;
+			color: #212529;
+			text-align: center;
+			text-decoration: none;
+			vertical-align: middle;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+			background-color: transparent;
+			border: 1px solid transparent;
+			padding: .375rem .75rem;
+			font-size: 1rem;
+			border-radius: .25rem;
+			transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+		}
+
+
+		select {
+			padding: 10px;
+			width: 100%;
+			outline: none;
+			border: none;
+			border: 1px solid #ccc;
+			border-radius:6px;
+		}
+
+		.bttn {
+			color: #fff;
+			background-color: #0d6efd;
+			border-color: #0d6efd;
+		}
+
+			.bttn:hover {
+				color: #fff;
+				background-color: #0b5ed7;
+				border-color: #0a58ca;
+			}
+	</style>
+
+	</head>
+
+	<bodey>
+		<div style="width:50%;margin:auto;">
+		<form method="post" asp-action="SavedPerson" asp-controller="MissingPeople" enctype="multipart/form-data">
+			<h1 style="margin:25px auto; text-align:center;">Add Missing Person</h1>
+			<dive>
+				<label>Person Name</label>
+				<input class="form-control" asp-for="Name" />
+				<span asp-validation-for="Name" class="text-danger"></span>
+				<br />
+			</dive>
+
+			<dive>
+				<label>Age</label>
+				<input class="form-control" asp-for="Age" />
+				<span asp-validation-for="Age" class="text-danger"></span>
+				<br />
+			</dive>
+			<dive>
+				<label>Gender</label>
+				<select class="form-control" asp-for="Gender">
+					<option value="Male" selected>Male</option>
+					<option value="Female">Female</option>
+				</select>
+				<br />
+			</dive>
+			<dive>
+				<label>Date the person was found</label>
+				<input class="form-control" type="date" asp-for="Date">
+				<span asp-validation-for="Date" class="text-danger"></span>
+				<br />
+			</dive>
+			<dive>
+				<label>Your phone</label>
+				<input class="form-control" asp-for="Phone" />
+				<span asp-validation-for="Phone" class="text-danger"></span>
+				<br />
+			</dive>
+			<dive>
+				<label>Governorate the person was found</label>
+				<div class="input-field">
+					<div class="input-select">
+						<select asp-for="FoundGovern" onchange="city(this,'cityComboBox1')">
+							<option value="">Governorate</option>
+							<option>Alexandria</option>
+							<option>Aswan</option>
+							<option>Asyut</option>
+							<option>Beheira</option>
+							<option>Beni Suef</option>
+							<option>Cairo</option>
+							<option>Dakahlia</option>
+							<option>Damietta</option>
+							<option>Faiyum</option>
+							<option>Gharbia</option>
+							<option>Giza</option>
+							<option>Ismailia</option>
+							<option>Kafr El Sheikh</option>
+							<option>Luxor</option>
+							<option>Matruh</option>
+							<option>Minya</option>
+							<option>Monufia</option>
+							<option>New Valley</option>
+							<option>North Sinai</option>
+							<option>Port Said</option>
+							<option>Qalyubia</option>
+							<option>Qena</option>
+							<option>Red Sea</option>
+							<option>Sharqia</option>
+							<option>Sohag</option>
+							<option>South Sinai</option>
+							<option>Suez</option>
+						</select>
+						<span asp-validation-for="FoundGovern" class="text-danger"></span>
+					</div>
+				</div>
+				<br />
+			</dive>
+			<dive>
+				<label>City the person was found</label>
+				<div class="input-field">
+					<div class="input-select">
+						<select asp-for="FoundCity" id="cityComboBox1">
+							<option value="">City</option>
+						</select>
+						<span asp-validation-for="FoundCity" class="text-danger"></span>
+					</div>
+				</div>
+				<br />
+			</dive>
+			<dive>
+				<label>Your Governorate</label>
+				<div class="input-field">
+					<div class="input-select">
+						<select asp-for="Address_Govern" id="stateComboBox" onchange="city(this,'cityComboBox2')">
+							<option value="">Governorate</option>
+							<option>Alexandria</option>
+							<option>Aswan</option>
+							<option>Asyut</option>
+							<option>Beheira</option>
+							<option>Beni Suef</option>
+							<option>Cairo</option>
+							<option>Dakahlia</option>
+							<option>Damietta</option>
+							<option>Faiyum</option>
+							<option>Gharbia</option>
+							<option>Giza</option>
+							<option>Ismailia</option>
+							<option>Kafr El Sheikh</option>
+							<option>Luxor</option>
+							<option>Matruh</option>
+							<option>Minya</option>
+							<option>Monufia</option>
+							<option>New Valley</option>
+							<option>North Sinai</option>
+							<option>Port Said</option>
+							<option>Qalyubia</option>
+							<option>Qena</option>
+							<option>Red Sea</option>
+							<option>Sharqia</option>
+							<option>Sohag</option>
+							<option>South Sinai</option>
+							<option>Suez</option>
+						</select>
+						<span asp-validation-for="Address_Govern" class="text-danger"></span>
+					</div>
+				</div>
+				<br />
+			</dive>
+			<dive>
+				<label>Your City</label>
+				<div class="input-field">
+					<div class="input-select">
+						<select asp-for="Address_City" id="cityComboBox2">
+							<option value="">City</option>
+						</select>
+						<span asp-validation-for="Address_City" class="text-danger"></span>
+					</div>
+				</div>
+				<br />
+			</dive>
+			<dive>
+				<label>His/Her Picture</label>
+				<input type="file" class="form-control" asp-for="Image" />
+				<span asp-validation-for="Image" class="text-danger"></span>
+				<br />
+			</dive>
+			<div style="text-align:right;">
+				<input style="display:inline-block;margin:20px 0;text-align:right;" type="submit" value="Add Person" class="bttn btn-primary" />
+			</div>
+		</form>
+		</div>
+		<script src="~/js/Cities.js"></script>
+	</bodey>
+</html>
+
+@section Scripts{
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
