@@ -25,18 +25,6 @@
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
-      "Id": "D:\\Projects\\FindHim\\Project1\\wwwroot\\css\\normalize.css",
-      "PackagePath": "staticwebassets\\css\\normalize.css"
-    },
-    {
-      "Id": "D:\\Projects\\FindHim\\Project1\\wwwroot\\css\\owl.carousel.min.css",
-      "PackagePath": "staticwebassets\\css\\owl.carousel.min.css"
-    },
-    {
-      "Id": "D:\\Projects\\FindHim\\Project1\\wwwroot\\css\\rome.css",
-      "PackagePath": "staticwebassets\\css\\rome.css"
-    },
-    {
       "Id": "D:\\Projects\\FindHim\\Project1\\wwwroot\\css\\signup.css",
       "PackagePath": "staticwebassets\\css\\signup.css"
     },
@@ -55,22 +43,6 @@
     {
       "Id": "D:\\Projects\\FindHim\\Project1\\wwwroot\\js\\Cities.js",
       "PackagePath": "staticwebassets\\js\\Cities.js"
-    },
-    {
-      "Id": "D:\\Projects\\FindHim\\Project1\\wwwroot\\js\\custom-materialize.js",
-      "PackagePath": "staticwebassets\\js\\custom-materialize.js"
-    },
-    {
-      "Id": "D:\\Projects\\FindHim\\Project1\\wwwroot\\js\\flatpickr.js",
-      "PackagePath": "staticwebassets\\js\\flatpickr.js"
-    },
-    {
-      "Id": "D:\\Projects\\FindHim\\Project1\\wwwroot\\js\\owl.carousel.min.js",
-      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
-    },
-    {
-      "Id": "D:\\Projects\\FindHim\\Project1\\wwwroot\\js\\rome.js",
-      "PackagePath": "staticwebassets\\js\\rome.js"
     },
     {
       "Id": "D:\\Projects\\FindHim\\Project1\\wwwroot\\js\\site.js",

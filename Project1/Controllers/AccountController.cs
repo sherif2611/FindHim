@@ -20,16 +20,25 @@ namespace Project1.Controllers
         public IActionResult SavedRegiester(UserModel user)
         {
             var context = new FindHimDbContext();
-            var new_user = new User()
+            var OldUser=context.Users.Where(a=>a.Email==user.Email).FirstOrDefault();
+            if (OldUser==null)
             {
-                Name=user.Name, 
-                Email=user.Email,
-                Phone=user.Phone,
-                Password=user.Password,
-            };
-            context.Users.Add(new_user);
-            context.SaveChanges();
-            return RedirectToAction("Index","Home");
+                var new_user = new User()
+                {
+                    Name = user.Name,
+                    Email = user.Email,
+                    Phone = user.Phone,
+                    Password = user.Password,
+                };
+                context.Users.Add(new_user);
+                context.SaveChanges();
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                ModelState.AddModelError("Email", "This email is already registered.");
+                return View("Register", user);
+            }
         }
         public IActionResult Login()
         {
@@ -66,16 +75,5 @@ namespace Project1.Controllers
             await HttpContext.SignOutAsync();
             return RedirectToAction("index", "Home");
         }
-        //public IActionResult SetCookie()
-        //{
-            
-        //    return Content("Set Cookie");
-        //}
-        //public IActionResult GetCookie()
-        //{
-        //    var name = HttpContext.Request.Cookies["Name"];
-        //    var age = HttpContext.Request.Cookies["Age"];
-        //    return Content($"Get Cookie : {name}  {age} years old");
-        //}
     }
 }

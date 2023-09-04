@@ -8,7 +8,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup || Ma3rafa</title>
-    <link rel="stylesheet" href="~/css/normalize.css">
     <link rel="stylesheet" href="~/css/signup.css">
     <link rel="stylesheet" href="~/css/loignmaster.css">
     <!-- Font Awesome -->
@@ -25,7 +24,7 @@
             <form method="post" asp-action="SavedRegiester" asp-controller="Account">
                 <div class="form">
                     <h1>SignUp</h1>
-                    <div class="name">
+                    <div class="name" style="display:block;">
                         <div>
                             <input type="text" asp-for="Name" placeholder="Full Name">
                         </div>
